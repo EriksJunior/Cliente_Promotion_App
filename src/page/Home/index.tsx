@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from '../../components/Header';
 import Balance from '../../components/Balance';
+import PictureCompany from '../../components/PictureCompany';
 
-const listShops = [
+const listCompany = [
   {
     id: 1,
     nameCompany: 'Empire Grif'
@@ -19,6 +20,27 @@ const listShops = [
     id: 4,
     nameCompany: 'come quente'
   },
+  {
+    id: 5,
+    nameCompany: 'come quente'
+  },
+  {
+    id: 6,
+    nameCompany: 'come quente'
+  },
+  {
+    id: 7,
+    nameCompany: 'come quente'
+  },
+  {
+    id: 8,
+    nameCompany: 'come quente'
+  },
+  {
+    id: 9,
+    nameCompany: 'come quente'
+  },
+
 ]
 
 export default function App() {
@@ -29,13 +51,11 @@ export default function App() {
 
       <Text style={styles.title}>Lojas disponíveis</Text>
 
-      <FlatList
-        style={styles.list}
-        data={listShops}
-        keyExtractor={(item) => String(item.id)}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item}) => <Text>{item.nameCompany}</Text>}
-      />
+      <View style={styles.contentPictureCompany}>
+        <ScrollView style={styles.scrollViewCompany} horizontal={true} showsHorizontalScrollIndicator={false}>
+          {listCompany.map((e) => { return <PictureCompany key={e.id} dataCompany={e.nameCompany} /> })}
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -55,5 +75,15 @@ const styles = StyleSheet.create({
   list: {
     marginStart: 14,
     marginEnd: 14,
+  },
+  contentPictureCompany: {
+    flexDirection: 'row'
+  },
+  scrollViewCompany:{
+    maxHeight: 84,
+    marginBottom: 14,
+    marginTop: 18,
+    paddingEnd: 14,
+    paddingStart: 14,
   }
 });
