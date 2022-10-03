@@ -8,7 +8,7 @@ export default function Balance() {
 
       <View style={styles.item}>
         <Text style={styles.itemTitle}>Lider em Vendas</Text>
-        <TouchableOpacity activeOpacity={0.8}>
+        <TouchableOpacity activeOpacity={0.5}>
           <View style={styles.content}>
             <Text style={styles.valueSubTitleSale}>Bom dia e cia</Text>
           </View>
@@ -17,7 +17,7 @@ export default function Balance() {
 
       <View style={styles.item}>
         <Text style={styles.itemTitle}>Promoções hoje</Text>
-        <TouchableOpacity activeOpacity={0.8}>
+        <TouchableOpacity activeOpacity={0.5}>
           <View style={styles.content}>
             <Text style={styles.valueSubTitlePromotion}>15</Text>
           </View>

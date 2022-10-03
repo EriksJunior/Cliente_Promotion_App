@@ -8,19 +8,13 @@ import {
 
 import {AntDesign} from '@expo/vector-icons'
 
-interface IDataCompany {
-  dataCompany: string,
-  key?: number,
-  picture?: 'addfolder' | 'search1'
-}
-
-export default function PictureCompany({dataCompany, picture}: IDataCompany) {
+export default function SearchIcon() {
   return (
       <TouchableOpacity style={styles.actionButton} activeOpacity={0.5}>
         <View style={styles.areaButton}>
-          <AntDesign name={picture} size={26} color="#FFF"/>
+          <AntDesign name='search1' size={26} color="black"/>
         </View>
-        <Text style={styles.labelButton}>{dataCompany}</Text>
+        <Text style={styles.labelButton}>Pesquisar</Text>
       </TouchableOpacity>
   )
 }
@@ -32,7 +26,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   areaButton: {
-    backgroundColor: '#009999',
+    backgroundColor: 'white',
     padding: 10,
     borderRadius: 44 / 2
   },

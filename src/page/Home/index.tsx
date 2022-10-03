@@ -2,15 +2,16 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import PictureCompany from '../../components/PictureCompany';
+import SearchIcon from '../../components/SearchIcon';
 
 const listCompany = [
   {
     id: 1,
-    nameCompany: 'Empire Grif'
+    nameCompany: 'Empire Grif lokura'
   },
   {
     id: 2,
-    nameCompany: 'Trinnus'
+    nameCompany: 'Trinnus Açaiteria e Hamburgueria'
   },
   {
     id: 3,
@@ -18,27 +19,27 @@ const listCompany = [
   },
   {
     id: 4,
-    nameCompany: 'come quente'
+    nameCompany: 'Empire grif'
   },
   {
     id: 5,
-    nameCompany: 'come quente'
+    nameCompany: 'test'
   },
   {
     id: 6,
-    nameCompany: 'come quente'
+    nameCompany: 'test'
   },
   {
     id: 7,
-    nameCompany: 'come quente'
+    nameCompany: 'test'
   },
   {
     id: 8,
-    nameCompany: 'come quente'
+    nameCompany: 'test'
   },
   {
     id: 9,
-    nameCompany: 'come quente'
+    nameCompany: 'test'
   },
 
 ]
@@ -49,11 +50,12 @@ export default function App() {
       <Header nameUser={'Eriks Junior'} />
       <Balance />
 
-      <Text style={styles.title}>Lojas disponíveis</Text>
+      <Text style={styles.title}>Lojas Favoritas</Text>
 
       <View style={styles.contentPictureCompany}>
         <ScrollView style={styles.scrollViewCompany} horizontal={true} showsHorizontalScrollIndicator={false}>
-          {listCompany.map((e) => { return <PictureCompany key={e.id} dataCompany={e.nameCompany} /> })}
+          <SearchIcon />
+          {listCompany.map((e) => { return <PictureCompany picture={'addfolder'} key={e.id} dataCompany={e.nameCompany} /> })}
         </ScrollView>
       </View>
     </View>
@@ -68,19 +70,15 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 40,
     paddingStart: 16,
     paddingEnd: 16,
-  },
-  list: {
-    marginStart: 14,
-    marginEnd: 14,
   },
   contentPictureCompany: {
     flexDirection: 'row'
   },
   scrollViewCompany:{
-    maxHeight: 84,
+    maxHeight: 150,
     marginBottom: 14,
     marginTop: 18,
     paddingEnd: 14,
