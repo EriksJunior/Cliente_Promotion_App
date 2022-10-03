@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   StyleSheet,
   Text,
   StatusBar,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native'
 
 interface IUserName {
@@ -14,8 +14,8 @@ interface IUserName {
 import { Feather} from '@expo/vector-icons'
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
-
 export default function Header({nameUser}: IUserName){
+
   return(
     <View style={styles.container}>
       <View style={styles.content}>
