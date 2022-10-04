@@ -19,6 +19,7 @@ async function getCompanyPerPage() {
   try {
     const {data} = await api.get('/company/company/per/page/1')
     console.log(data)
+    alert('company search completed')
   } catch (error: any) {
     console.log(error)
   }
