@@ -15,6 +15,7 @@ interface IUserName {
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function Header({ nameUser }: IUserName) {
+
 async function getCompanyPerPage() {
   try {
     const {data} = await api.get('/company/company/per/page/1')
