@@ -18,8 +18,7 @@ export default function Header({ nameUser }: IUserName) {
 async function getCompanyPerPage() {
   try {
     const {data} = await api.get('/company/company/per/page/1')
-    console.log(data)
-    alert('company search completed')
+    alert(`company search completed: ${data[0].companyName}`)
   } catch (error: any) {
     console.log(error)
   }
