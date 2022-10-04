@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, SetStateAction  } from "react";
 import {
   View,
   StyleSheet,
@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { api } from "../../services/api";
+import {serviceGetCompanyPerPagess} from '../../services/company'
+import {ICompany} from '../../interfaces/ICompany'
 
 interface IUserName {
   nameUser: string;
@@ -16,10 +17,13 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
 
 export default function Header({ nameUser }: IUserName) {
 
-async function getCompanyPerPage() {
+  const [company, setCompany] = useState<Array<ICompany>>()
+
+async function getCompanyPerPage(): Promise<void> {
   try {
-    const {data} = await api.get('/company/company/per/page/1')
-    alert(`company search completed: ${data[0].companyName}`)
+    const result = await serviceGetCompanyPerPagess();
+    setCompany(result)
+    alert(`company search completed: ${result[0].companyName}`)
   } catch (error: any) {
     console.log(error)
   }
