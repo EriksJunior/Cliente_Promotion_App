@@ -17,13 +17,13 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
 
 export default function Header({ nameUser }: IUserName) {
 
-  const [company, setCompany] = useState<Array<ICompany>>()
+  const [company, setCompany] = useState<Array<ICompany>>([])
 
 async function getCompanyPerPage(): Promise<void> {
   try {
     const result = await serviceGetCompanyPerPagess();
     setCompany(result)
-    alert(`company search completed: ${result[0].companyName}`)
+    alert(`company search completed: ${result[1].companyName}`)
   } catch (error: any) {
     console.log(error)
   }
