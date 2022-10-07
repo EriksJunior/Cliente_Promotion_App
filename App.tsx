@@ -6,8 +6,8 @@ import {
 export default function App() {
   StatusBar.setBarStyle("light-content")
   StatusBar.setBackgroundColor("transparent")
-  
+
   return (
-      <Home />
+    <Home />
   );
 }

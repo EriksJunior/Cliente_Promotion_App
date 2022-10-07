@@ -1,4 +1,4 @@
-import React, { useState, SetStateAction } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   View,
   StyleSheet,
@@ -7,9 +7,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { serviceGetCompanyPerPagess } from '../../services/company'
 import { ICompany } from '../../interfaces/ICompany'
-
+import { CompanyContext } from '../../contexts/company'
 interface IUserName {
   nameUser: string;
 }
@@ -17,25 +16,12 @@ interface IUserName {
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function Header({ nameUser }: IUserName) {
-
-  const [company, setCompany] = useState<Array<ICompany>>([])
-
-  async function getCompanyPerPage(): Promise<void> {
-    try {
-      const result = await serviceGetCompanyPerPagess();
-      setCompany(result)
-      alert(result[1].companyName)
-    } catch (error: any) {
-      console.log(error)
-    }
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.textHeaderUserName}>Olá, {nameUser}</Text>
 
-        <TouchableOpacity activeOpacity={0.5} onPress={getCompanyPerPage} style={styles.buttonUser}>
+        <TouchableOpacity activeOpacity={0.5} style={styles.buttonUser}>
           <Feather name="user" size={27} color="#fff" />
         </TouchableOpacity>
       </View>

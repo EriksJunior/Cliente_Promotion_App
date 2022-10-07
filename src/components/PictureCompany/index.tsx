@@ -10,7 +10,7 @@ import {AntDesign} from '@expo/vector-icons'
 
 interface IDataCompany {
   dataCompany: string,
-  key?: number,
+  key?: number | string,
   picture?: 'addfolder' | 'search1'
 }
 
