@@ -4,29 +4,28 @@ import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import PictureCompany from '../../components/PictureCompany';
 import SearchIcon from '../../components/SearchIcon';
-import { CompanyContext } from '../../contexts/company';
 import { ICompany } from '../../interfaces/ICompany';
-
+import { CompanyContext } from '../../contexts/company';
 
 export default function App() {
-  const { company, getCompanyPerPage }: any = useContext(CompanyContext)
+  const {company, getCompanyPerPage} = useContext(CompanyContext) as {company: Array<ICompany>, getCompanyPerPage: any}
 
-  useEffect(() => {
-    // getCompanyPerPage()
+  useEffect(() =>{
+    getCompanyPerPage()
   }, [])
-
+  
   return (
-    <View style={styles.container}>
-      <Header nameUser={'Eriks Junior'} />
-      <Balance />
-      <Text style={styles.title}>Lojas Favoritas</Text>
-      <View style={styles.contentPictureCompany}>
-        <ScrollView style={styles.scrollViewCompany} horizontal={true} showsHorizontalScrollIndicator={false}>
-          <SearchIcon />
-          {company.map((e: ICompany) => { return <PictureCompany picture={'addfolder'} key={e.id} dataCompany={e.companyName} /> })}
-        </ScrollView>
+      <View style={styles.container}>
+        <Header nameUser={'Eriks Junior'} />
+        <Balance />
+        <Text style={styles.title}>Lojas Favoritas</Text>
+        <View style={styles.contentPictureCompany}>
+          <ScrollView style={styles.scrollViewCompany} horizontal={true} showsHorizontalScrollIndicator={false}>
+            <SearchIcon />
+            {company.map((e: ICompany) => { return <PictureCompany picture={'addfolder'} key={e.id} dataCompany={e.companyName} /> })}
+          </ScrollView>
+        </View>
       </View>
-    </View>
   );
 }
 

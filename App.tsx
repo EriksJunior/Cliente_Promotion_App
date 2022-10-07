@@ -1,4 +1,4 @@
-import Home from './src/page/Home/index'
+import Home from './src/page/Home/Home'
 import {
   StatusBar,
 } from 'react-native'
