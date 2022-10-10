@@ -9,18 +9,20 @@ import {
 import {AntDesign} from '@expo/vector-icons'
 
 interface IDataCompany {
-  dataCompany: string,
+  title?: string,
   key?: number | string,
-  picture?: 'addfolder' | 'search1'
+  picture?: 'addfolder' | 'search1',
+  color: string,
+  backgroundColorPicture?: string
 }
 
-export default function PictureCompany({dataCompany, picture}: IDataCompany) {
+export default function PictureCompany({title, picture, color, backgroundColorPicture}: IDataCompany) {
   return (
       <TouchableOpacity style={styles.actionButton} activeOpacity={0.5}>
-        <View style={styles.areaButton}>
-          <AntDesign name={picture} size={26} color="#FFF"/>
+        <View style={{backgroundColor: backgroundColorPicture, padding: 10, borderRadius: 44 / 2}}>
+          <AntDesign name={picture} size={26} color={color}/>
         </View>
-        <Text style={styles.labelButton}>{dataCompany}</Text>
+        <Text style={styles.labelButton}>{title}</Text>
       </TouchableOpacity>
   )
 }
@@ -31,11 +33,11 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     marginRight: 20,
   },
-  areaButton: {
-    backgroundColor: '#009999',
-    padding: 10,
-    borderRadius: 44 / 2
-  },
+  // areaButton: {
+  //   backgroundColor: '#009999',
+  //   padding: 10,
+  //   borderRadius: 44 / 2
+  // },
   labelButton:{
     textAlign: 'center'
   }

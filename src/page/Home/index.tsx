@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import PictureCompany from '../../components/PictureCompany';
-import SearchIcon from '../../components/SearchIcon';
+import SearchIcon from '../../components/Icons/SearchIcon/index';
 import { ICompany } from '../../interfaces/ICompany';
 import { CompanyContext } from '../../contexts/company';
 
@@ -21,8 +21,8 @@ export default function App() {
         <Text style={styles.title}>Lojas Favoritas</Text>
         <View style={styles.contentPictureCompany}>
           <ScrollView style={styles.scrollViewCompany} horizontal={true} showsHorizontalScrollIndicator={false}>
-            <SearchIcon />
-            {company.map((e: ICompany) => { return <PictureCompany picture={'addfolder'} key={e.id} dataCompany={e.companyName} /> })}
+            <PictureCompany picture={'search1'} backgroundColorPicture={'#FFF'} color={'black'} title={'Pesquisar'}/>
+            {company.map((e: ICompany) => { return <PictureCompany backgroundColorPicture={'#009999'} color={'#FFF'} picture={'addfolder'} key={e.id} title={e.companyName} /> })}
           </ScrollView>
         </View>
       </View>

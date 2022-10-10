@@ -8,13 +8,18 @@ import {
 
 import {AntDesign} from '@expo/vector-icons'
 
-export default function SearchIcon() {
+interface IdataIcon {
+  name: 'search1',
+  title: string
+}
+
+export default function SearchIcon(dataIcon: IdataIcon) {
   return (
       <TouchableOpacity style={styles.actionButton} activeOpacity={0.5}>
         <View style={styles.areaButton}>
-          <AntDesign name='search1' size={26} color="black"/>
+          <AntDesign name={dataIcon.name} size={26} color="black"/>
         </View>
-        <Text style={styles.labelButton}>Pesquisar</Text>
+        <Text style={styles.labelButton}>{dataIcon.title}</Text>
       </TouchableOpacity>
   )
 }
