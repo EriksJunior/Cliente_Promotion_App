@@ -21,7 +21,7 @@ interface IDataCompany {
 export default function PictureCompany({title, picture, color, backgroundColorPicture, onPress}: IDataCompany) {
   return (
       <TouchableOpacity onPress={onPress} style={styles.actionButton} activeOpacity={0.5}>
-        <View style={{backgroundColor: backgroundColorPicture, padding: 10, borderRadius: 44 / 2}}>
+        <View style={[styles.areaButton, { backgroundColor: backgroundColorPicture}]}>
           <AntDesign name={picture} size={26} color={color}/>
         </View>
         <Text style={styles.labelButton}>{title}</Text>
@@ -35,11 +35,10 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     marginRight: 20,
   },
-  // areaButton: {
-  //   backgroundColor: '#009999',
-  //   padding: 10,
-  //   borderRadius: 44 / 2
-  // },
+  areaButton: {
+    padding: 10,
+    borderRadius: 44 / 2
+  },
   labelButton:{
     textAlign: 'center'
   }
