@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
+  GestureResponderEvent,
 } from 'react-native'
 
 import {AntDesign} from '@expo/vector-icons'
@@ -13,12 +14,13 @@ interface IDataCompany {
   key?: number | string,
   picture?: 'addfolder' | 'search1',
   color: string,
-  backgroundColorPicture?: string
+  backgroundColorPicture?: string,
+  onPress?: (event: GestureResponderEvent) => void
 }
 
-export default function PictureCompany({title, picture, color, backgroundColorPicture}: IDataCompany) {
+export default function PictureCompany({title, picture, color, backgroundColorPicture, onPress}: IDataCompany) {
   return (
-      <TouchableOpacity style={styles.actionButton} activeOpacity={0.5}>
+      <TouchableOpacity onPress={onPress} style={styles.actionButton} activeOpacity={0.5}>
         <View style={{backgroundColor: backgroundColorPicture, padding: 10, borderRadius: 44 / 2}}>
           <AntDesign name={picture} size={26} color={color}/>
         </View>
