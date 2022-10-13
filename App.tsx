@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import {
   StatusBar,
 } from 'react-native'
-import {MyTab} from './src/routes'
+import Routes from './src/routes'
 
 export default function App() {
   StatusBar.setBarStyle("light-content")
@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <MyTab />
+      <Routes />
     </NavigationContainer>
   );
 }
