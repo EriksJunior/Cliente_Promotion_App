@@ -4,7 +4,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 
 import Home from './page/Home/Home'
+import Categories from "./page/Categories";
+import Search from "./page/Search";
 import Favorites from './page/Favorites'
+import MyAccount from "./page/MyAccount";
 import TabButtonSearch from "./components/TabButtonSearch";
 
 const Stack = createNativeStackNavigator();
@@ -38,7 +41,7 @@ export default function Routes() {
 
       <Tab.Screen
         name="Categorias"
-        component={Favorites}
+        component={Categories}
         options={{
           headerShown: false, tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="view-grid" size={size} color={color} />
@@ -48,7 +51,7 @@ export default function Routes() {
 
       <Tab.Screen
         name="Pesquisar"
-        component={Favorites}
+        component={Search}
         options={{
           tabBarLabel: '',
           headerShown: false,
@@ -70,7 +73,7 @@ export default function Routes() {
 
       <Tab.Screen
         name="Minha conta"
-        component={Favorites}
+        component={MyAccount}
         options={{
           headerShown: false, tabBarIcon: ({ color }) => (
             <Ionicons name="person-circle" size={25} color={color} />

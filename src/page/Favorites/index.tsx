@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 export default function App() {
   return (
       <View>
-        <Header nameUser='Sua lojas Favoritas :)'/>
+        <Header headerText='Sua lojas Favoritas :)'/>
         <Text>Todas lojas Favoritas</Text>
       </View>
   );
