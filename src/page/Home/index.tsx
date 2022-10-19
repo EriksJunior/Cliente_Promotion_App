@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header headerText={'Ola, Eriks Junior'} icon={'user'}/>
+      <Header headerText={'Ola, Eriks Junior'} icon={'user'} colorIcon={'#fff'} backgroundColor={'#181818'} />
       <Balance />
       <Text style={styles.title}>Lojas Favoritas</Text>
       <View style={styles.contentPictureCompany}>

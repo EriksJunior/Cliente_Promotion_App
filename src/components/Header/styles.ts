@@ -5,8 +5,12 @@ import {
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
-export const Container = styled.View`
-  background-color: #181818;
+interface IContainerStyleProps {
+  backgroundColor?: string
+}
+
+export const Container = styled.View<IContainerStyleProps>`
+  background-color: ${props => props.backgroundColor};
   padding-top: ${statusBarHeight}px;
   padding-left: 16px;
   padding-right: 16px;
@@ -16,7 +20,7 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   flex: 1;
-  flex-direction: row;
+  flex-direction: row ;//passar style row-reverse nos componente
   align-items: center;
   justify-content: space-between;
 `;

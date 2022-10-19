@@ -3,18 +3,20 @@ import React from "react";
 import { Container, Content, TextHeader, TouchableOpacityIcon } from "./styles";
 import { Feather } from "@expo/vector-icons";
 interface IUserName {
-  headerText?: string;
-  icon?: 'user'
+  headerText?: string
+  icon?: 'user' | 'arrow-left'
+  backgroundColor?: string
+  colorIcon?: string
 }
 
-export default function Header({ headerText, icon }: IUserName) {
+export default function Header({ headerText, icon, backgroundColor, colorIcon }: IUserName) {
   return (
-    <Container>
+    <Container backgroundColor={backgroundColor}>
       <Content>
         <TextHeader>{headerText}</TextHeader>
 
         <TouchableOpacityIcon activeOpacity={0.5}>
-          <Feather name={icon} size={27} color="#fff" />
+          <Feather name={icon} size={27} color={colorIcon} />
         </TouchableOpacityIcon>
       </Content>
     </Container>
