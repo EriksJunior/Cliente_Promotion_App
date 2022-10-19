@@ -27,14 +27,15 @@ export const Content = styled.View<IContainerStyleProps>`
 `;
 
 export const TextHeader = styled.Text`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   color: #009999;
+  text-align: center;
 `;
 
 export const TouchableOpacityIcon = styled.TouchableOpacity`
-  width: 44px;
-  height: 44px;
+  width: 35px;
+  height: 35px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;

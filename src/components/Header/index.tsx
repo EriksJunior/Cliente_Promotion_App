@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Container, Content, TextHeader, TouchableOpacityIcon } from "./styles";
-import { Feather } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 interface IUserName {
   headerText?: string
-  icon?: 'user' | 'arrow-left'
+  icon?: 'keyboard-arrow-left' |'person-outline'
   backgroundColor?: string
   colorIcon?: string
   contentRow?: string
@@ -17,7 +17,7 @@ export default function Header({ headerText, icon, backgroundColor, colorIcon, c
         <TextHeader>{headerText}</TextHeader>
 
         <TouchableOpacityIcon activeOpacity={0.5}>
-          <Feather name={icon} size={27} color={colorIcon} />
+          <MaterialIcons name={icon} size={30} color={colorIcon} />
         </TouchableOpacityIcon>
       </Content>
     </Container>
