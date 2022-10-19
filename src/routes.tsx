@@ -5,6 +5,7 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 
 import Home from './page/Home/Home'
 import Favorites from './page/Favorites'
+import TabButtonSearch from "./components/TabButtonSearch";
 
 const Stack = createNativeStackNavigator();
 function MyStack() {
@@ -49,8 +50,10 @@ export default function Routes() {
         name="Pesquisar"
         component={Favorites}
         options={{
-          headerShown: false, tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="shield-search" size={size} color={color} />
+          tabBarLabel: '',
+          headerShown: false,
+          tabBarIcon: ({ size, focused }) => (
+            <TabButtonSearch  size={size} color={'white'} focused={focused}/>
           )
         }}
       />
