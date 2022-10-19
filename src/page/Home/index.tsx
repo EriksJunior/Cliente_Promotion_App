@@ -16,7 +16,7 @@ export default function App() {
   }, [])
 
   function handleOpenFavorites() {
-    navigation.navigate('Favorites' as never)
+    navigation.navigate('Favoritos' as never)
   }
 
   return (
