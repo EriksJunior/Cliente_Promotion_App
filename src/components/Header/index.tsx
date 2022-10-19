@@ -7,12 +7,13 @@ interface IUserName {
   icon?: 'user' | 'arrow-left'
   backgroundColor?: string
   colorIcon?: string
+  contentRow?: string
 }
 
-export default function Header({ headerText, icon, backgroundColor, colorIcon }: IUserName) {
+export default function Header({ headerText, icon, backgroundColor, colorIcon, contentRow }: IUserName) {
   return (
     <Container backgroundColor={backgroundColor}>
-      <Content>
+      <Content contentRow={contentRow}>
         <TextHeader>{headerText}</TextHeader>
 
         <TouchableOpacityIcon activeOpacity={0.5}>

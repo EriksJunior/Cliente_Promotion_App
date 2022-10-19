@@ -7,6 +7,7 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
 
 interface IContainerStyleProps {
   backgroundColor?: string
+  contentRow?: string
 }
 
 export const Container = styled.View<IContainerStyleProps>`
@@ -18,9 +19,9 @@ export const Container = styled.View<IContainerStyleProps>`
   flex-direction: row;
 `;
 
-export const Content = styled.View`
+export const Content = styled.View<IContainerStyleProps>`
   flex: 1;
-  flex-direction: row ;//passar style row-reverse nos componente
+  flex-direction: ${props => props.contentRow} ;//passar style row-reverse nos componente
   align-items: center;
   justify-content: space-between;
 `;
