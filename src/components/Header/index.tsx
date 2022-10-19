@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import {
   View,
   StyleSheet,
@@ -7,26 +7,29 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { ICompany } from '../../interfaces/ICompany'
-import { CompanyContext } from '../../contexts/company'
 interface IUserName {
-  nameUser: string;
+  headerText?: string;
+  icon?: 'user'
 }
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
-export default function Header({ nameUser }: IUserName) {
+export default function Header({ headerText, icon }: IUserName) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.textHeaderUserName}>Olá, {nameUser}</Text>
+        <Text style={styles.textHeaderUserName}>{headerText}</Text>
 
-        <TouchableOpacity activeOpacity={0.5} style={styles.buttonUser}>
-          <Feather name="user" size={27} color="#fff" />
+        <TouchableOpacity activeOpacity={0.5} style={styles.icon}>
+          <Feather name={icon} size={27} color="#fff" />
         </TouchableOpacity>
       </View>
     </View>
   );
+}
+
+const teste = () =>{
+  return `backgroundColor: red`
 }
 
 const styles = StyleSheet.create({
@@ -49,10 +52,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#009999",
   },
-  buttonUser: {
+  icon: {
     width: 44,
     height: 44,
-    backgroundColor: "#009999",
+    teste,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 44 / 2,
