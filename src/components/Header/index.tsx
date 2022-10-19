@@ -28,10 +28,6 @@ export default function Header({ headerText, icon }: IUserName) {
   );
 }
 
-const teste = () =>{
-  return `backgroundColor: red`
-}
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#181818",
@@ -55,7 +51,6 @@ const styles = StyleSheet.create({
   icon: {
     width: 44,
     height: 44,
-    teste,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 44 / 2,
